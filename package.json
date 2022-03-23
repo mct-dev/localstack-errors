@@ -1,0 +1,44 @@
+{
+  "name": "localstack-temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "16.14.0"
+  },
+  "scripts": {
+    "start": "npm run build && npm run deploy && npm run test",
+    "build": "npm run build:clean && ts-node ./src/scripts/build.ts",
+    "build:clean": "rimraf dist",
+    "deploy": "cd ./src/scripts && ./deploy.sh",
+    "test": "cd ./src/scripts && ./test.sh",
+    "release:clean": "rimraf dist",
+    "release:compile": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.93",
+    "@types/lodash": "^4.14.180",
+    "@types/node": "^17.0.23",
+    "@types/uuid": "^8.3.4",
+    "@types/yargs": "^17.0.10",
+    "joi": "^17.6.0",
+    "rimraf": "^3.0.2",
+    "terser-webpack-plugin": "^5.3.1",
+    "ts-loader": "^9.2.8",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-node-externals": "^3.0.0",
+    "yargs": "^17.4.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.21",
+    "uuid": "^8.3.2"
+  }
+}
